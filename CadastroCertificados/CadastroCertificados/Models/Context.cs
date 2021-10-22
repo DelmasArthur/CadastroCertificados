@@ -11,7 +11,7 @@ namespace CadastroCertificados.Models
         public DbSet<Aluno> Alunos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CertificadosJIX;Integrated Security=True")
+            optionBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CertificadosJIX;Integrated Security=True");
         }
     }
 }
