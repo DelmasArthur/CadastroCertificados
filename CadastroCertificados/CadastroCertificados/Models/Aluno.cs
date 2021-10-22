@@ -10,5 +10,7 @@ namespace CadastroCertificados.Models
         public int Id { get; set; }
         public string NomeAluno { get; set; }
         public string Curso { get; set; }
+
+        public List<Certificado> Certificados { get; set; }
     }
 }
