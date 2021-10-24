@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<CadastroCertificados.Models.Certificado>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Certificados";
 }
 
-<h1>Index</h1>
+<h1>Lista de Certificados</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +22,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.TempoCertificado)
             </th>
-            <th>
+            <th width="200px">
                 @Html.DisplayNameFor(model => model.LinkCertificado)
             </th>
             <th>
@@ -36,30 +34,33 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td width="120px">
                 @Html.DisplayFor(modelItem => item.NomeCertificado)
             </td>
-            <td>
+            <td width="300px">
                 @Html.DisplayFor(modelItem => item.Aluno.NomeAluno)
             </td>
-            <td>
+            <td width="150px">
                 @Html.DisplayFor(modelItem => item.TipoCertificado)
             </td>
-            <td>
+            <td width="80px" class="text-center">
                 @Html.DisplayFor(modelItem => item.TempoCertificado)
             </td>
-            <td>
+            <td max-width="200px">
                 @Html.DisplayFor(modelItem => item.LinkCertificado)
             </td>
-            <td>
+            <td width="230px">
                 @Html.DisplayFor(modelItem => item.StatusCertificado)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id"><button type="button" class="btn btn-outline-dark btn-sm">Ver Certificado</button></a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-outline-warning btn-sm">Editar Certificado</button></a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><button type="button" class="btn btn-outline-danger btn-sm">Apagar</button></a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+<p>
+    <a asp-action="Create"><button type="button" class="btn btn-sm btn-primary">Adicionar Novo Certificado</button></a>
+</p>
